@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+  {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edi_Mars' Registration form</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <a href="{% url 'homepage' %}">
+              <img src="" alt="Logo">
+              <p>Edi_Mars</p>  
+            </a>
+
+            <div class="navba">
+                <a href="{% url 'logout' %}">Log Out</a> 
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h1>Welcome to the Registration Page</h1>
+            <p>This is the registration page of the website.</p>
+        
+            <form action="." method="post" autocomplete="off">
+        
+                {% csrf_token %}
+        
+                {{ registerform.as_p }}
+
+                <button type="submit" class="btn" id="regBtn">Register</button>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        All rights.
+    </footer>
+    <script src="{% static 'scripts/js/app.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
