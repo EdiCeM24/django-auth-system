@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Form</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'assets/oas/member.css' %}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.3/css/boxicons.min.css" integrity="sha512-BoLWp8DAANVVfCxnkDc9g9hQgyjgDyDSKCS5vHgwIQ5OUljWEfPPSmUbdlg1iRl1najgpCqfX/mLb2xIdPy51A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav class="nav">
+           <div class="brand">
+              <a href="{% url 'homepage' %}">
+                <img src="" alt="Logo">
+                <p>Edi_Mars</p>
+              </a>
+           </div> 
+           <div class="navba">
+              {% if form.is_authenticated %}
+                <a href="{% url 'register' %}">Register</a>
+                <a href="{% url 'login' %}">Login</a>
+                {% else %}
+                 <a href="{% url 'logout' %}">Logout</a>
+              {% endif %}  
+           </div>
+        </nav>
+    </header>
+    <section>
+        <form action="." method="post">
+            {% csrf_token %}
+            <div class="input-box">
+                <input type="text" name="fname" id="fname" placeholder="Enter your first name">
+                <input type="text" name="lname" id="lname" placeholder="Enter your last name">
+            </div>
+
+            <div class="input-box">
+                <input type="text" name="username" id="username" placeholder="Enter your username or business name">
+                <input type="email" name="email" id="email" placeholder="Enter your business email">
+            </div>
+
+            <div class="input-box">
+                <input type="text" name="designation" id="designation" placeholder="Enter your business address">
+                <input type="text" name="" id="email" placeholder="Enter your business email">
+            </div>
+            <div class="input-box">
+                
+                <input type="radio" name="designation" id="choice" placeholder="Enter your business address">
+                <label for="male">Male</label>
+                <input type="radio" name="" id="choice" placeholder="Enter your business email">
+                <label for="female">Female</label>
+                <input type="radio" name="" id="choice" placeholder="Enter your business email">
+                <label for="other">Other</label>
+            </div>
+            <div class="input-btn">
+                <label for="checkbox">Check Box</label>
+                <input type="checkbox" value="Check box">
+            </div>
+
+            <p>
+               <input type="checkbox"> 
+              By clicking the submit button you have agreed to the term of use and conditions governing this application.  
+            </p>
+
+            <button type="submit">Submit</button>
+        </form>
+
+    </section>
+
+    <footer>
+        All rights reserved @ 2025.
+    </footer>
+</body>
+</html>

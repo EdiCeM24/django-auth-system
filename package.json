@@ -1,0 +1,21 @@
+{
+  "name": "django-auth-system",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch",
+    "build": "npx tailwindcss -i ./static/src/input.css -o ./static/src/output.css -m",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcus Edidiong Cletus under Edi_Mars.",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "flowbite": "^2.5.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
+  }
+}

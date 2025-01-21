@@ -29,6 +29,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_HOST = 'live.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'api'
+EMAIL_HOST_PASSWORD = '********8d95'
+EMAIL_PORT = '587'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'cemus24@gmail.com'
+
 
 # Application definition
 
@@ -40,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'edimars.apps.EdimarsConfig',
+    'compressor', 
 ]
 
 MIDDLEWARE = [
@@ -125,6 +136,27 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+
+LOGIN_REDIRECT_URL = "homepage"
+LOGIN_URL = "/"
+LOGIN_REQUIRED_IGNORE_VIEW_NAMES = [
+
+'contact',
+
+'signup',
+
+'login',
+
+'logout'
+
+]
+
+
+COMPRESS_ROOT = BASE_DIR / 'static'
+
+COMPRESS_ENABLED = True
+
+STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

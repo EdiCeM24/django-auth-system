@@ -1,0 +1,46 @@
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+}
+a {
+    color: aliceblue;
+    text-decoration: none;
+}
+/* 
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #203040; 
+    padding: 1rem;
+}
+.brand a {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+}
+.form-control {
+    margin-left: 17%;
+}
+.navba {
+   gap: 1rem;
+   font-size: 1.2rem;
+   font-weight: 600;
+   margin-left: 15%;
+}
+.maint {
+    background-color: #838360;
+    border: 1px solid #fb6b83;
+    padding: 0.6rem 1rem;
+    opacity: 1;
+}
+.maint:hover {
+    background-color: #3d3d33;
+    opacity: 1;
+} */
