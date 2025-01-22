@@ -7,6 +7,7 @@ module.exports = {
     enabled: true,
   },
   content: [
+    "./src/**/*.{html,js}",
     './templates/**/*.html',
      './node_modules/flowbite/**/*.js',
      './templates/view/base.html',
